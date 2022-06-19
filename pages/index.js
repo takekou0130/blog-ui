@@ -2,7 +2,9 @@ import Head from "next/head";
 import Link from "next/link";
 
 export async function getStaticProps() {
-  const res = await fetch("http://localhost:3030/users");
+  const host = process.env.API_HOST;
+  const port = process.env.API_PORT;
+  const res = await fetch(`http://${host}:${port}/users`);
   const json = await res.json();
   return {
     props: {

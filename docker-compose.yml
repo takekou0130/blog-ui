@@ -1,0 +1,20 @@
+version: "3"
+services:
+  ui:
+    image: next.js
+    container_name: blog-ui
+    volumes:
+      - .:/app
+    ports:
+      - 3000:3000
+    environment:
+      API_HOST: blog-api
+      API_PORT: 3030
+    # for access to api
+    networks:
+      - blog
+# for access to api
+networks:
+  blog:
+    name: blog
+    external: true
