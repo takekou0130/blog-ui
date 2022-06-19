@@ -1,5 +1,21 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## use docker
+
+build image
+
+```bash
+docker image build -t [tag]:[version] .
+ex) docker image build -t next.js:latest .
+```
+
+run container
+
+```bash
+docker container run -it --rm -p [port]:[port] --name [name] [image tag]:[version tag]
+ex) docker container run -it --rm -p 3000:3000 --name next.js next.js:latest
+```
+
 ## Getting Started
 
 First, run the development server:
